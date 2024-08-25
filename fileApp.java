@@ -84,6 +84,10 @@ public class fileApp {
     }
 
     private static void createFile(String folderName, String fileName) {
+        if (fileName == null || fileName.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Invalid file name. File creation aborted.");
+            return;
+        }
         try {
             File myObj;
             if (folderName.isEmpty()) {
